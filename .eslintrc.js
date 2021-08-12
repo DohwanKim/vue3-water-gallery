@@ -17,6 +17,7 @@ module.exports = {
   extends: [
     "plugin:vue/vue3-essential",
     "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
     "airbnb-base",
     "prettier",
     "plugin:prettier/recommended",

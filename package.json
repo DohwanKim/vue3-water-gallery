@@ -32,8 +32,16 @@
     "@vue/eslint-config-typescript": "^7.0.0",
     "@vue/test-utils": "^2.0.0-0",
     "eslint": "^6.7.2",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.0.0",
+    "prettier": "^2.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended": "^5.0.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.20.1",
     "typescript": "~4.1.5",
     "vue-jest": "^5.0.0-0"
   },
@@ -45,7 +53,8 @@
     "extends": [
       "plugin:vue/vue3-essential",
       "@vue/airbnb",
-      "@vue/typescript/recommended"
+      "@vue/typescript/recommended",
+      "plugin:prettier/recommended"
     ],
     "parserOptions": {
       "ecmaVersion": 2020
@@ -68,6 +77,11 @@
     "last 2 versions",
     "not dead"
   ],
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --fix",
+    "*.{css,scss,vue}": "stylelint --fix",
+    "*": "prettier -w -u"
+  },
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
     "collectCoverage": true,

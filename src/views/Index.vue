@@ -31,6 +31,7 @@ import { defineComponent } from "vue";
 import Gallery from "@/components/Index/Gallery.vue";
 import LandingHeader from "@/components/LandingHeader.vue";
 import LandingTop from "@/components/LandingTop.vue";
+import auth from "@/service/auth.ts";
 
 export default defineComponent({
   name: "Index",

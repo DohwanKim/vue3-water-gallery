@@ -12,6 +12,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "node-sass": "^6.0.1",
+    "oidc-client": "^1.11.5",
     "sinon": "^11.1.2",
     "vue": "^3.0.0",
     "vue-meta": "^2.4.0",

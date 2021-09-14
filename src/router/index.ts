@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Index from "@/views/Index.vue";
-import Admin from "@/views/Admin.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,7 +10,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/admin",
     name: "Admin",
-    component: Admin,
+    component: () => import("@/views/Admin.vue"),
   },
 ];
 

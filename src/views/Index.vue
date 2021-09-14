@@ -1,4 +1,19 @@
 <template>
+  <div class="dummy">
+    <h3>로그인 더미</h3>
+    <div>
+      <input type="text" placeholder="id" />
+    </div>
+    <div>
+      <input type="password" placeholder="pw" />
+    </div>
+    <div>
+      <button type="button" @click="login">login</button>
+    </div>
+    <div>
+      <button type="button" @click="logout">logout</button>
+    </div>
+  </div>
   <LandingHeader />
   <main>
     <section class="main__top">
@@ -24,6 +39,16 @@ export default defineComponent({
     LandingHeader,
     LandingTop,
   },
+  methods: {
+    login() {
+      // eslint-disable-next-line no-console
+      console.log("login");
+    },
+    logout() {
+      // eslint-disable-next-line no-console
+      console.log("logout");
+    },
+  },
 });
 </script>
 
@@ -34,5 +59,11 @@ export default defineComponent({
   background-color: black;
   max-height: calc(100vh - var(--size-header));
   overflow: hidden;
+}
+
+.dummy {
+  margin: 0 auto;
+  padding: 50px;
+  width: 600px;
 }
 </style>

@@ -41,9 +41,13 @@ export default defineComponent({
     LandingTop,
   },
   methods: {
-    login() {
-      // eslint-disable-next-line no-console
-      console.log("login");
+    async login() {
+      try {
+        await auth.signinRedirect();
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.warn(e);
+      }
     },
     logout() {
       // eslint-disable-next-line no-console

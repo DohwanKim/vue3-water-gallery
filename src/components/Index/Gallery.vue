@@ -1,8 +1,62 @@
 <template>
   <div class="gallery">
-    <figure class="gallery__figure" v-for="dummy in 15" :key="dummy" @click="showDetail">
+    <figure class="gallery__figure" @click="showDetail">
       <div class="gallery__figure--img-wrapper">
-        <img class="gallery__figure--img" src="https://picsum.photos/1920/1280" alt="" />
+        <img
+          class="gallery__figure--img"
+          :src="require('@/assets/img/20190915_141455-crop.jpg')"
+          alt=""
+        />
+      </div>
+      <figcaption class="gallery--figure--caption">Picture name</figcaption>
+    </figure>
+    <figure class="gallery__figure" @click="showDetail">
+      <div class="gallery__figure--img-wrapper">
+        <img
+          class="gallery__figure--img"
+          :src="require('@/assets/img/20210201_200206-crop.jpg')"
+          alt=""
+        />
+      </div>
+      <figcaption class="gallery--figure--caption">Picture name</figcaption>
+    </figure>
+    <figure class="gallery__figure" @click="showDetail">
+      <div class="gallery__figure--img-wrapper">
+        <img
+          class="gallery__figure--img"
+          :src="require('@/assets/img/20210602_152857-crop.jpg')"
+          alt=""
+        />
+      </div>
+      <figcaption class="gallery--figure--caption">Picture name</figcaption>
+    </figure>
+    <figure class="gallery__figure" @click="showDetail">
+      <div class="gallery__figure--img-wrapper">
+        <img
+          class="gallery__figure--img"
+          :src="require('@/assets/img/20210704_124207-crop.jpg')"
+          alt=""
+        />
+      </div>
+      <figcaption class="gallery--figure--caption">Picture name</figcaption>
+    </figure>
+    <figure class="gallery__figure" @click="showDetail">
+      <div class="gallery__figure--img-wrapper">
+        <img
+          class="gallery__figure--img"
+          :src="require('@/assets/img/20210812_192244-crop.jpg')"
+          alt=""
+        />
+      </div>
+      <figcaption class="gallery--figure--caption">Picture name</figcaption>
+    </figure>
+    <figure class="gallery__figure" @click="showDetail">
+      <div class="gallery__figure--img-wrapper">
+        <img
+          class="gallery__figure--img"
+          :src="require('@/assets/img/20210903_212630-crop.jpg')"
+          alt=""
+        />
       </div>
       <figcaption class="gallery--figure--caption">Picture name</figcaption>
     </figure>

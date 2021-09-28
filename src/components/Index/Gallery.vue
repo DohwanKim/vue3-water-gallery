@@ -67,11 +67,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import DetailModal from "@/components/DetailModal.vue";
+import { defineComponent } from 'vue';
+import DetailModal from '@/components/DetailModal.vue';
 
 export default defineComponent({
-  name: "Gallery",
+  name: 'Gallery',
   components: {
     DetailModal,
   },

@@ -7,13 +7,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "DetailModal",
+  name: 'DetailModal',
   methods: {
     close() {
-      this.$emit("close");
+      this.$emit('close');
     },
   },
 });

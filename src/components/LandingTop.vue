@@ -1,6 +1,10 @@
 <template>
   <div class="landing__top">
-    <img class="landing__top__content" src="https://picsum.photos/1920/1280" alt="lorem" />
+    <img
+      class="landing__top__content"
+      src="https://picsum.photos/1920/1280"
+      alt="lorem"
+    />
   </div>
 </template>
 

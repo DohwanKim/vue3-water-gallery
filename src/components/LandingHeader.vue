@@ -3,7 +3,7 @@
 </template>
 
 <style scoped>
-@import "../assets/style/common.css";
+@import '../assets/style/common.css';
 
 head {
   background-color: var(--color-white);

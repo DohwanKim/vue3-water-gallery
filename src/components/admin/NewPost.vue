@@ -2,7 +2,7 @@
 
 <script>
 export default {
-  name: "NewPost",
+  name: 'NewPost',
 };
 </script>
 

@@ -27,15 +27,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import Gallery from "@/components/Index/Gallery.vue";
-import LandingHeader from "@/components/LandingHeader.vue";
-import LandingTop from "@/components/LandingTop.vue";
-// eslint-disable-next-line import/extensions
-import auth from "@/service/auth.ts";
+import { defineComponent } from 'vue';
+import Gallery from '@/components/Index/Gallery.vue';
+import LandingHeader from '@/components/LandingHeader.vue';
+import LandingTop from '@/components/LandingTop.vue';
+import auth from '@/service/auth';
 
 export default defineComponent({
-  name: "Index",
+  name: 'Index',
   components: {
     Gallery,
     LandingHeader,
@@ -52,14 +51,14 @@ export default defineComponent({
     },
     logout() {
       // eslint-disable-next-line no-console
-      console.log("logout");
+      console.log('logout');
     },
   },
 });
 </script>
 
 <style scoped>
-@import "../assets/style/common.css";
+@import '../assets/style/common.css';
 
 .main__top {
   background-color: black;

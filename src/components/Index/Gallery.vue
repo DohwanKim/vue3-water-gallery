@@ -68,7 +68,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import DetailModal from '@/components/DetailModal.vue';
+import DetailModal from '@/components/Index/DetailModal.vue';
 
 export default defineComponent({
   name: 'Gallery',
@@ -99,6 +99,7 @@ export default defineComponent({
   max-width: 1200px;
   padding-top: 1rem;
   transition: 0.15s all ease-in-out;
+  z-index: 2;
 }
 
 .gallery__figure {
@@ -140,15 +141,5 @@ export default defineComponent({
 
 .gallery__figure:hover .gallery--figure--caption {
   color: #fff;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>

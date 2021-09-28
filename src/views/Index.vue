@@ -1,19 +1,4 @@
 <template>
-  <div class="dummy">
-    <h3>로그인 더미</h3>
-    <div>
-      <input type="text" placeholder="id" />
-    </div>
-    <div>
-      <input type="password" placeholder="pw" />
-    </div>
-    <div>
-      <button type="button" @click="login">login</button>
-    </div>
-    <div>
-      <button type="button" @click="logout">logout</button>
-    </div>
-  </div>
   <LandingHeader />
   <main>
     <section class="main__top">
@@ -29,8 +14,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Gallery from '@/components/Index/Gallery.vue';
-import LandingHeader from '@/components/LandingHeader.vue';
-import LandingTop from '@/components/LandingTop.vue';
+import LandingHeader from '@/components/Index/LandingHeader.vue';
+import LandingTop from '@/components/Index/LandingTop.vue';
 import auth from '@/service/auth';
 
 export default defineComponent({
@@ -58,17 +43,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import '../assets/style/common.css';
-
 .main__top {
   background-color: black;
-  max-height: calc(100vh - var(--size-header));
+  height: 100vh;
   overflow: hidden;
-}
-
-.dummy {
-  margin: 0 auto;
-  padding: 50px;
-  width: 600px;
 }
 </style>

@@ -1,13 +1,7 @@
 module.exports = {
-  extends: ['stylelint-config-recommended', 'stylelint-config-standard'],
-  plugins: ['stylelint-scss', 'stylelint-order'],
+  extends: ['stylelint-prettier/recommended'],
+  plugins: ['stylelint-prettier'],
   rules: {
-    'at-rule-no-unknown': null,
-    'scss/at-rule-no-unknown': true,
-    'order/properties-alphabetical-order': true,
-    'no-empty-source': null,
-    'rule-empty-line-before': null,
-    'selector-list-comma-newline-after': null,
-    'no-descending-specificity': null
+    "prettier/prettier": [true, { 'singleQuote': true, 'tabWidth': 2 }]
   },
 };

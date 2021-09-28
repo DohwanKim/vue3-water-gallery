@@ -3,9 +3,7 @@ import Oidc from 'oidc-client';
 const { VUE_APP_AUTH_SERVER, VUE_APP_SERVER } = process.env;
 
 const userManager = new Oidc.UserManager({
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  useStore: new Oidc.WebStorageStateStore(),
+  userStore: new Oidc.WebStorageStateStore({}),
   authority: VUE_APP_AUTH_SERVER,
   client_id: 'interactive.public',
   response_type: 'code',

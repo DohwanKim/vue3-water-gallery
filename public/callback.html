@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Waiting...</title>
+</head>
+
+<body>
+<script src="oidc-client.js"></script>
+<script>
+  const access = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNjA5ODI4MzgzLCJleHAiOjE2MDk4MzAxODN9.ZsvB2RG4CB3dK1t3eLv7wlzZ7OhdybtwvTtLbJ46G-k';
+  const options = {
+    userStore: new Oidc.WebStorageStateStore(),
+    response_mode: "query",
+    loadUserInfo: true,
+    filterProtocolClaims: true,
+  };
+  (async () => {
+    try {
+      const mgr = new Oidc.UserManager(options);
+      const user = await mgr.signinRedirectCallback();
+      console.log(user);
+      window.location.href = "/";
+    } catch (err) {
+      console.log(err);
+    }
+  })();
+</script>
+</body>
+</html>

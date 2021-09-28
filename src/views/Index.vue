@@ -12,27 +12,42 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import Gallery from "@/components/Index/Gallery.vue";
-import LandingHeader from "@/components/LandingHeader.vue";
-import LandingTop from "@/components/LandingTop.vue";
+import { defineComponent } from 'vue';
+import Gallery from '@/components/Index/Gallery.vue';
+import LandingHeader from '@/components/Index/LandingHeader.vue';
+import LandingTop from '@/components/Index/LandingTop.vue';
+import auth from '@/service/auth';
 
 export default defineComponent({
-  name: "Index",
+  name: 'Index',
   components: {
     Gallery,
     LandingHeader,
     LandingTop,
   },
+  setup() {
+    const logout = () => {
+      // eslint-disable-next-line no-console
+      console.log('logout');
+    };
+    const login = async () => {
+      try {
+        await auth.signinRedirect();
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.warn(e);
+      }
+    };
+
+    return { login, logout };
+  },
 });
 </script>
 
 <style scoped>
-@import "../assets/style/common.css";
-
 .main__top {
   background-color: black;
-  max-height: calc(100vh - var(--size-header));
+  height: 100vh;
   overflow: hidden;
 }
 </style>

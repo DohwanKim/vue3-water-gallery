@@ -43,7 +43,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import Datepicker from 'vue3-datepicker';
 import DetailPost from '@/components/Admin/DetailPost.vue';
 import UploadPost from '@/components/Admin/UploadPost.vue';
@@ -56,12 +56,12 @@ export default defineComponent({
     DetailPost,
     UploadPost,
   },
-  data() {
-    return {
-      showType: 'A',
-      startDay: '',
-      endDay: '',
-    };
+  setup() {
+    const showType = ref('A');
+    const startDay = ref('');
+    const endDay = ref('');
+
+    return { showType, startDay, endDay };
   },
 });
 </script>

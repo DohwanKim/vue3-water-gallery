@@ -25,19 +25,21 @@ export default defineComponent({
     LandingHeader,
     LandingTop,
   },
-  methods: {
-    async login() {
+  setup() {
+    const logout = () => {
+      // eslint-disable-next-line no-console
+      console.log('logout');
+    };
+    const login = async () => {
       try {
         await auth.signinRedirect();
       } catch (e) {
         // eslint-disable-next-line no-console
         console.warn(e);
       }
-    },
-    logout() {
-      // eslint-disable-next-line no-console
-      console.log('logout');
-    },
+    };
+
+    return { login, logout };
   },
 });
 </script>

@@ -67,7 +67,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import DetailModal from '@/components/Index/DetailModal.vue';
 
 export default defineComponent({
@@ -75,18 +75,16 @@ export default defineComponent({
   components: {
     DetailModal,
   },
-  data() {
-    return {
-      isShowDetail: false,
+  setup() {
+    const isShowDetail = ref(false);
+    const showDetail = () => {
+      isShowDetail.value = true;
     };
-  },
-  methods: {
-    showDetail() {
-      this.isShowDetail = true;
-    },
-    hideDetail() {
-      this.isShowDetail = false;
-    },
+    const hideDetail = () => {
+      isShowDetail.value = false;
+    };
+
+    return { isShowDetail, showDetail, hideDetail };
   },
 });
 </script>

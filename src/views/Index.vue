@@ -26,6 +26,9 @@ export default defineComponent({
     LandingTop,
   },
   setup() {
+    auth.getUser().then(user => {
+      console.log(user);
+    });
     const logout = () => {
       // eslint-disable-next-line no-console
       console.log('logout');

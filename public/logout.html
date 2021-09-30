@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Waiting...</title>
+</head>
+
+<body>
+<script src="oidc-client.js"></script>
+<script>
+  (async () => {
+    try {
+      const mgr = new Oidc.UserManager(options);
+      const user = await mgr.signoutPopupCallback();
+      
+      window.location.href = '/';
+    } catch (err) {
+      console.log(err);
+    }
+  })();
+</script>
+</body>
+</html>

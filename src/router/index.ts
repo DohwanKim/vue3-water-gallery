@@ -28,11 +28,14 @@ const router = createRouter({
 
 router.beforeEach(async (to, _, next) => {
   const { isAuthenticated } = to.meta;
+  const REDIRECT_PATH = 'REDIRECT_PATH';
+
   if (!isAuthenticated) {
     next();
   } else {
     const user = await userManager.getUser();
     if (!user) {
+      document.cookie = `${REDIRECT_PATH}=${to.path}`;
       userManager.signinRedirect();
     } else {
       next();

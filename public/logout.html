@@ -8,7 +8,6 @@
 <body>
 <script src="oidc-client.js"></script>
 <script>
-  const REDIRECT_PATH = 'REDIRECT_PATH';
   const options = {
     userStore: new Oidc.WebStorageStateStore(),
     response_mode: 'code',
@@ -18,12 +17,13 @@
 
   (async () => {
     try {
-      const rRedirectPath = /^REDIRECT_PATH/;
       const mgr = new Oidc.UserManager(options);
-      const user = await mgr.signinRedirectCallback();
-      const redirectPathCookie = (document.cookie.split(';').filter(x => rRedirectPath.test(x)))[0];
+      await mgr.signoutRedirectCallback();
+      await mgr.clearStaleState();
+      await mgr.removeUser();
+      await mgr.revokeAccessToken();
       
-      window.location.href = redirectPathCookie.split('=')[1];
+      window.location.href = '/';
     } catch (err) {
       console.log(err);
     }

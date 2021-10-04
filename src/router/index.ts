@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import userManager from '@/service/auth';
+import { getUser, signIn } from '@/service/authService';
 import Index from '@/views/Index.vue';
 
 const routes: Array<RouteRecordRaw> = [
@@ -33,10 +33,11 @@ router.beforeEach(async (to, _, next) => {
   if (!isAuthenticated) {
     next();
   } else {
-    const user = await userManager.getUser();
+    const user = await getUser();
+    console.log(user);
     if (!user) {
       document.cookie = `${REDIRECT_PATH}=${to.path}`;
-      userManager.signinRedirect();
+      signIn();
     } else {
       next();
     }

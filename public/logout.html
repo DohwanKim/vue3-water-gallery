@@ -8,10 +8,20 @@
 <body>
 <script src="oidc-client.js"></script>
 <script>
+  const options = {
+    userStore: new Oidc.WebStorageStateStore(),
+    response_mode: 'code',
+    loadUserInfo: true,
+    filterProtocolClaims: true,
+  };
+
   (async () => {
     try {
       const mgr = new Oidc.UserManager(options);
-      const user = await mgr.signoutPopupCallback();
+      await mgr.signoutRedirectCallback();
+      await mgr.clearStaleState();
+      await mgr.removeUser();
+      await mgr.revokeAccessToken();
       
       window.location.href = '/';
     } catch (err) {

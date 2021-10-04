@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-link to="/">돌아가기</router-link>
-    <button @click="signOut">signout</button>
+    <button @click="signOutHandler">signout</button>
   </div>
   <transition name="fade">
     <div v-if="showType === 'A'" class="admin--wrapper">
@@ -46,7 +46,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import Datepicker from 'vue3-datepicker';
-import auth from '@/service/auth';
+import { signOut } from '@/service/authService';
 import DetailPost from '@/components/Admin/DetailPost.vue';
 import UploadPost from '@/components/Admin/UploadPost.vue';
 import '@/assets/style/admin.css';
@@ -66,8 +66,8 @@ export default defineComponent({
     return { showType, startDay, endDay };
   },
   methods: {
-    signOut() {
-      auth.signoutPopup();
+    signOutHandler() {
+      signOut();
     },
   },
 });

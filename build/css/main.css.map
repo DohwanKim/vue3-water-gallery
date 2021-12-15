@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/assets/style/scss/test.scss"],"names":[],"mappings":"AAAA;EACE,yBAAyB;AAC3B","file":"main.css","sourcesContent":[".test {\n  background-color: #333333;\n}\n"]}

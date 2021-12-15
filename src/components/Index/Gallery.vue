@@ -1,6 +1,10 @@
 <template>
   <div class="gallery">
-    <figure class="gallery__figure" @click="showDetail">
+    <figure
+      class="gallery__figure"
+      @click="showDetail"
+      @keydown.space="showDetail"
+    >
       <div class="gallery__figure--img-wrapper">
         <img
           class="gallery__figure--img"
@@ -10,7 +14,11 @@
       </div>
       <figcaption class="gallery--figure--caption">Picture name</figcaption>
     </figure>
-    <figure class="gallery__figure" @click="showDetail">
+    <figure
+      class="gallery__figure"
+      @click="showDetail"
+      @keydown.space="showDetail"
+    >
       <div class="gallery__figure--img-wrapper">
         <img
           class="gallery__figure--img"
@@ -20,7 +28,11 @@
       </div>
       <figcaption class="gallery--figure--caption">Picture name</figcaption>
     </figure>
-    <figure class="gallery__figure" @click="showDetail">
+    <figure
+      class="gallery__figure"
+      @click="showDetail"
+      @keydown.space="showDetail"
+    >
       <div class="gallery__figure--img-wrapper">
         <img
           class="gallery__figure--img"
@@ -30,7 +42,11 @@
       </div>
       <figcaption class="gallery--figure--caption">Picture name</figcaption>
     </figure>
-    <figure class="gallery__figure" @click="showDetail">
+    <figure
+      class="gallery__figure"
+      @click="showDetail"
+      @keydown.space="showDetail"
+    >
       <div class="gallery__figure--img-wrapper">
         <img
           class="gallery__figure--img"
@@ -40,7 +56,11 @@
       </div>
       <figcaption class="gallery--figure--caption">Picture name</figcaption>
     </figure>
-    <figure class="gallery__figure" @click="showDetail">
+    <figure
+      class="gallery__figure"
+      @click="showDetail"
+      @keydown.space="showDetail"
+    >
       <div class="gallery__figure--img-wrapper">
         <img
           class="gallery__figure--img"
@@ -50,7 +70,11 @@
       </div>
       <figcaption class="gallery--figure--caption">Picture name</figcaption>
     </figure>
-    <figure class="gallery__figure" @click="showDetail">
+    <figure
+      class="gallery__figure"
+      @click="showDetail"
+      @keydown.space="showDetail"
+    >
       <div class="gallery__figure--img-wrapper">
         <img
           class="gallery__figure--img"
@@ -71,7 +95,7 @@ import { defineComponent, ref } from 'vue';
 import DetailModal from '@/components/Index/DetailModal.vue';
 
 export default defineComponent({
-  name: 'Gallery',
+  name: 'GalleryMain',
   components: {
     DetailModal,
   },

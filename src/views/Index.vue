@@ -4,7 +4,7 @@
     <section class="main__top">
       <LandingTop />
     </section>
-    <section>
+    <section class="test">
       <Gallery />
     </section>
   </main>
@@ -19,7 +19,7 @@ import LandingTop from '@/components/Index/LandingTop.vue';
 import auth from '@/service/authHelper';
 
 export default defineComponent({
-  name: 'Index',
+  name: 'IndexPage',
   components: {
     Gallery,
     LandingHeader,

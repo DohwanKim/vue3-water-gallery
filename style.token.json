@@ -1,0 +1,9 @@
+{
+  "font-size": "16px",
+  "font-main": "Roboto, Oxygen-Sans, Ubuntu, sans-serif",
+  "lineheight": 1.5,
+  "font-code": "Menlo, Consolas, Monaco, monospace",
+  "lineheight-code": 1.2,
+  "color-back": "#f5f5f5",
+  "color-fore": "#444"
+}

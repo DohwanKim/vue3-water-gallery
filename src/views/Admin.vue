@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-link to="/">돌아가기</router-link>
-    <button @click="signOutHandler">signout</button>
+    <button @click="signOutHandler">Sign Out</button>
   </div>
   <transition name="fade">
     <div v-if="showType === 'A'" class="admin--wrapper">
@@ -11,7 +11,7 @@
           <button type="button" @click="showType = 'B'">추가</button>
           <Datepicker />
           <Datepicker />
-          <input type="text" placeholder="검색어 입력" />
+          <input type="text" placeholder="검색어 입력" aria-label="search" />
           <button type="button">검색</button>
         </div>
         <div class="admin__list">
@@ -20,9 +20,10 @@
             :key="index"
             class="admin__list--item"
             @click="showType = 'C'"
+            @keydown.space="showType = 'C'"
           >
             <div>
-              <input type="checkbox" />
+              <input type="checkbox" aria-label="itemCheck" />
               <div>num</div>
               <div>Date</div>
               <div>Name</div>
@@ -52,7 +53,7 @@ import UploadPost from '@/components/Admin/UploadPost.vue';
 import '@/assets/style/admin.css';
 
 export default defineComponent({
-  name: 'Admin',
+  name: 'AdminMain',
   components: {
     Datepicker,
     DetailPost,

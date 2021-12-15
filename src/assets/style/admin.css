@@ -57,6 +57,10 @@
 
 .admin__list--item > div {
   display: flex;
+
+  .test {
+    background-color: #4d4d4d;
+  }
 }
 
 .admin__list--item img {

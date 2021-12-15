@@ -18,7 +18,7 @@
             <div>Name</div>
           </div>
           <div class="admin__detail--des">
-            <textarea />
+            <textarea aria-label="description" />
           </div>
         </div>
       </div>

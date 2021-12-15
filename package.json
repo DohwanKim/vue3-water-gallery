@@ -3,19 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "npm run serve"
   },
   "dependencies": {
-    "autoprefixer": "^9.0.0",
     "core-js": "^3.6.5",
     "node-sass": "^6.0.1",
     "oidc-client": "^1.11.5",
     "sinon": "^11.1.2",
-    "vue": "^3.0.0",
+    "vue": "^3.2.26",
     "vue-meta": "^2.4.0",
     "vue-router": "^4.0.0-0",
     "vue3-datepicker": "^0.2.5",
@@ -24,32 +23,46 @@
   "devDependencies": {
     "@types/jest": "^24.0.19",
     "@types/sinon": "^10.0.2",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-plugin-unit-jest": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-airbnb": "^5.0.2",
-    "@vue/eslint-config-typescript": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "@vue/cli-plugin-babel": "~5.0.0-rc.1",
+    "@vue/cli-plugin-eslint": "~5.0.0-rc.1",
+    "@vue/cli-plugin-router": "~5.0.0-rc.1",
+    "@vue/cli-plugin-typescript": "~5.0.0-rc.1",
+    "@vue/cli-plugin-unit-jest": "~5.0.0-rc.1",
+    "@vue/cli-plugin-vuex": "~5.0.0-rc.1",
+    "@vue/cli-service": "~5.0.0-rc.1",
+    "@vue/compiler-sfc": "^3.2.26",
+    "@vue/eslint-config-airbnb": "^6.0.0",
+    "@vue/eslint-config-typescript": "^9.1.0",
     "@vue/test-utils": "^2.0.0-0",
-    "eslint": "^6.7.2",
+    "autoprefixer": "^9.8.8",
+    "cssnano": "^5.0.12",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-vue": "^7.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "eslint-plugin-vuejs-accessibility": "^1.1.0",
+    "jest": "^27.1.0",
+    "postcss-advanced-variables": "^3.0.1",
+    "postcss-assets": "^6.0.0",
+    "postcss-cli": "^9.1.0",
+    "postcss-map-get": "^0.3.0",
+    "postcss-nested": "^5.0.6",
+    "postcss-scss": "^4.0.2",
+    "postcss-sort-media-queries": "^4.2.1",
     "prettier": "^2.3.2",
+    "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.2.0",
     "stylelint-scss": "^3.20.1",
+    "ts-jest": "^27.0.4",
     "typescript": "~4.1.5",
-    "vue-jest": "^5.0.0-0"
+    "vue-jest": "^5.0.0-0",
+    "yarn": "^1.22.17"
   },
   "eslintConfig": {
     "root": true,
@@ -63,7 +76,8 @@
       "plugin:prettier/recommended"
     ],
     "parserOptions": {
-      "ecmaVersion": 2020
+      "ecmaVersion": 2020,
+      "parser": "@typescript-eslint/parser"
     },
     "rules": {},
     "overrides": [
@@ -83,16 +97,16 @@
     "last 2 versions",
     "not dead"
   ],
-  "lint-staged": {
-    "*.{ts,tsx}": "eslint --fix",
-    "*.{css,scss,vue}": "stylelint --fix",
-    "*": "prettier -w -u"
-  },
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
     "collectCoverage": true,
     "transform": {
       "^.+\\.vue$": "vue-jest"
     }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --fix",
+    "*.{css,scss,vue}": "stylelint --fix",
+    "*": "prettier -w -u"
   }
 }

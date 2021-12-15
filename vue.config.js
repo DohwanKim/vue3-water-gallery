@@ -9,6 +9,15 @@ module.exports = {
           test: /\.css$/,
           use: ['postcss-loader'],
         },
+        {
+          test: /\.css$/,
+          use: [
+            { loader: 'style-loader' },
+            { loader: 'css-loader' },
+            { loader: 'postcss-loader' },
+            { loader: 'sass-loader' },
+          ],
+        },
       ],
     },
     resolve: {
